@@ -1,36 +1,3 @@
-// trigger to play music in the background with sweetalert
-window.addEventListener("load", () => {
-    var strtDt = new Date();
-
-    var endDt = new Date("2022-07-04");
-    strtDt.setHours(0, 0, 0, 0);
-
-    console.log(endDt)
-
-    if (endDt <= strtDt) {
-        document.title = "Buka pada tanggal " + endDt.toLocaleDateString();
-        document.querySelector(".banner").style.display = "block";
-        return;
-    }
-
-    Swal.fire({
-        title: "Do you want to play music in the background?",
-        // text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes",
-        cancelButtonText: "No",
-    }).then((result) => {
-        if (result.isConfirmed) {
-            document.querySelector(".song").play();
-            resolveFetch().then(animationTimeline());
-        } else {
-            resolveFetch().then(animationTimeline());
-        }
-    });
-});
 
 // animation timeline
 const animationTimeline = () => {

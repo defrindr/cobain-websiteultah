@@ -10,7 +10,7 @@ body {
 }
 
 .banner {
-    display: none;
+    display: block;
     background-color: #323334;
     color: whitesmoke;
     padding: 20px;
